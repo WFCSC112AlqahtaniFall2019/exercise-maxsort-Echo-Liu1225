@@ -10,47 +10,62 @@ void print(const vector<int>& list);
 int main() {
 
     vector<int> v(5);  // vector to be sorted
-    // initialize v
+    v = {6,1,3,2,1};
+    //initialize v
     /* your code here */
 
 
-    // print the unsorted v
+    cout<<"v = {6, 1, 3, 2, 1}"<<endl;// print the unsorted v
     /* your code here */
 
 
-    // sort v
+   maxSort( v);// sort v
     /* your code here */
 
 
-    // print the sorted v
+   print(v);// print the sorted v
     /* your code here */
 
 
     return 0;
 }
 
-/* the function definitions */
+    /* the function definitions */
 
 //Max sort function
 void maxSort(vector<int>& list){
     for(int i=list.size()-1;i>=0;i--){
-        /*complete the code*/
+        int current_Max = 0;
+        int current_Position = 0;/*complete the code*/
 
         for(int j=0;j<=i;j++){
-            /*complete the code*/
-
+        if(list[j]>current_Max){
+            current_Max = list [j];
+            current_Position = j;
+        } /*complete the code*/
         }
-        /*complete the code*/
+        swap(list[current_Position], list[i]); /*complete the code*/
     }
 }
 
 // swap function
-void swap(int& a, int&b){
-    /*your code here*/
+void swap(int& a, int& b){
+   int temp = a;
+   a = b;
+   b = temp;/*your code here*/
 }
 
 // print function
 void print(const vector<int>& list){
-    /*your code here*/
+   cout<<"v = {";
+   for(int x = 0; x<5; x++){
+       if(x<4) {
+           cout << list[x] << ", ";
+       }
+       else{
+           cout<< list[x];
+   }
+   }
+    cout<<"}";/*your code here*/
 }
 
